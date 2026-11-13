@@ -8,6 +8,20 @@ Projet scolaire réalisé en langage C visant à concevoir un moniteur de ressou
 
 Cette application permet de surveiller en temps réel l'état matériel et logiciel de la machine Linux, tout en offrant la possibilité de figer l'état du système pour une analyse ultérieure.
 
+---
+
+## 🛠️ Compilation et Lancement
+
+*(À venir avec le Makefile)*
+```bash
+# Compilation
+make
+
+# Exécution
+./bin/sysmonitor
+```
+
+
 ### Fonctionnalités principales :
 
 1. **Surveillance en temps réel (Mode Live) :**
@@ -21,6 +35,8 @@ Cette application permet de surveiller en temps réel l'état matériel et logic
    * **Export Snapshot :** Enregistre l'ensemble des métriques et processus à l'instant *t* dans un fichier `.csv`.
    * **Relecture Snapshot :** Permet de charger un fichier CSV pour réafficher visuellement dans l'interface l'état exact du système au moment de la capture.
 
+
+   biliothéque graphique: lvg
 ---
 
 ## 👥 Répartition du Binôme
@@ -32,15 +48,3 @@ Le projet est conçu de manière modulaire, associant développement système (L
 
 Pour plus de détails techniques sur les formules et l'architecture du code, consultez la documentation dans [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
----
-
-## 🛠️ Compilation et Lancement
-
-*(À venir avec le Makefile)*
-```bash
-# Compilation
-make
-
-# Exécution
-./bin/sysmonitor
-```

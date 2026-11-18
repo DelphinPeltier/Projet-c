@@ -10,16 +10,20 @@ Cette application permet de surveiller en temps réel l'état matériel et logic
 
 ---
 
-## 🛠️ Compilation et Lancement
-
-*(À venir avec le Makefile)*
-```bash
-# Compilation
-make
-
-# Exécution
-./bin/sysmonitor
+## 🛠️ Compilation et bibliothéque
+instaler les bibliothèques nécessaires :
 ```
+sudo apt update
+sudo apt install -y build-essential 
+sudo apt install -y  libsdl2-ttf-dev fonts-dejavu-core
+```
+compilation
+```
+make clean
+make
+make run 
+```
+
 
 
 ### Fonctionnalités principales :

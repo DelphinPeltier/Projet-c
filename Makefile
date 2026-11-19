@@ -1,24 +1,20 @@
-# Nom de l'exécutable
-EXEC = prog
+CC = gcc
+CFLAGS = -Wall -Wextra -Iinclude $(shell sdl2-config --cflags 2>/dev/null)
+LDFLAGS = $(shell sdl2-config --libs 2>/dev/null || echo -lSDL2) -lSDL2_ttf
 
-# Liste des fichiers objets
+EXEC = prog
 OBJS = main.o
 
-# Règle par défaut
 all: $(EXEC)
 
-# Édition de liens
 $(EXEC): $(OBJS)
-	gcc $(OBJS) -o $(EXEC)
+	$(CC) $(OBJS) -o $(EXEC) $(LDFLAGS)
 
-# Compilation des .c (situés dans src/) en .o
 %.o: src/%.c
-	gcc -Iinclude -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Nettoyage
 clean:
 	rm -f $(OBJS) $(EXEC)
 
-# Exécution
 run: $(EXEC)
 	./$(EXEC)

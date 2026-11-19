@@ -8,6 +8,8 @@ Projet scolaire réalisé en langage C visant à concevoir un moniteur de ressou
 
 Cette application permet de surveiller en temps réel l'état matériel et logiciel de la machine Linux, tout en offrant la possibilité de figer l'état du système pour une analyse ultérieure.
 
+axel et delphin 
+
 ---
 
 ## 🛠️ Compilation et bibliothéque

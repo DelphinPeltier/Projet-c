@@ -51,4 +51,9 @@ typedef struct {
     int process_count;
 } SystemSnapshot;
 
+typedef struct {
+    double total_gb, used_gb, free_gb;
+} DiskInfo;
+
+
 #endif // SYSTEM_METRICS_H

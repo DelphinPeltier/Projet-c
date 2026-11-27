@@ -3,7 +3,7 @@ CFLAGS = -Wall -Wextra -Iinclude $(shell sdl2-config --cflags 2>/dev/null)
 LDFLAGS = $(shell sdl2-config --libs 2>/dev/null || echo -lSDL2) -lSDL2_ttf
 
 EXEC = prog
-OBJS = main.o
+OBJS = main.o memory.o cpu.o
 
 all: $(EXEC)
 

@@ -2,10 +2,26 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <SDL2/SDL_ttf.h>
+#include "../include/system_metrics.h"
+#include "../include/memory.h"
+#include "../include/cpu.h"
 
 int main(int argc, char *argv[]) {
     (void)argc;
     (void)argv;
+
+    SystemSnapshot snap;
+    if (get_cpu_info(&snap) == 0){
+        printf("CPU : %.1f%%\n", snap.cpu_total_usage);
+        printf("Nombre de coeurs : %d\n", snap.cpu_core_count);
+        printf("Fréquence du CPU : %.1f MHz\n", snap.cpu_frequency_mhz);
+    }
+    if (get_memory_info(&snap) == 0){
+        printf("Mémoire totale : %lu KB\n", snap.mem_total_kb);
+        printf("Mémoire utilisée : %lu KB\n", snap.mem_used_kb);
+        printf("Mémoire libre : %lu KB\n", snap.mem_free_kb);
+        printf("Pourcentage de mémoire utilisée : %.1f%%\n", snap.mem_used_pourcentage);
+    }
 
     if (SDL_Init(SDL_INIT_VIDEO) != 0) {
         printf("Error: %s\n", SDL_GetError());
@@ -87,3 +103,4 @@ int main(int argc, char *argv[]) {
     SDL_Quit();
     return 0;
 }
+

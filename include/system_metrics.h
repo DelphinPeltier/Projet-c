@@ -33,7 +33,7 @@ typedef struct {
     unsigned long mem_total_kb;           // Mémoire totale
     unsigned long mem_used_kb;            // Mémoire utilisée
     unsigned long mem_free_kb;            // Mémoire libre
-    unsigned long mem_cached_kb;          // Mémoire cache / buffers
+    double mem_used_pourcentage;         // Pourcentage de mémoire utilisée
     
     // --- Disque (Module Étudiant 2) ---
     char disk_mount_point[STRING_SHORT];  // ex: "/"
